@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance Comfort | Premium Fashion for All Ages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #8b5a2b; /* Earthy brown for elegance */
+            --secondary: #f8f1e9; /* Cream background */
+            --accent: #d4a373; /* Complementary accent */
+            --dark: #3a2c1a; /* Dark brown for text */
+            --light: #ffffff;
+        }
+        
+        body {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .navbar {
+            background-color: var(--light) !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary) !important;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 10px 25px;
+            font-weight: 500;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            background-color: var(--light);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .product-category {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin: 10px 0;
+            color: var(--dark);
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .category-banner {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .category-banner:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            border-radius: 10px;
+        }
+        
+        .category-banner-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-banner h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .category-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--light);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .newsletter-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 5rem 0;
+            background-image: url('https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+        }
+        
+        .newsletter-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .newsletter-input {
+            padding: 15px;
+            border-radius: 50px;
+            border: none;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--dark);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 5rem 0 2rem;
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .category-banner {
+                height: 300px;
+            }
+            
+            .category-banner h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Elegance Comfort</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#adults">Adult Fashion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#babies">Baby Essentials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-outline-primary me-2"><i class="bi bi-search"></i></a>
+                    <a href="#" class="btn btn-outline-primary me-2"><i class="bi bi-person"></i></a>
+                    <a href="#" class="btn btn-outline-primary"><i class="bi bi-cart"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Where Elegance Meets Comfort for All Ages</h1>
+            <p class="hero-subtitle">Discover premium adult fashion and adorable baby essentials at one destination</p>
+            <a href="#adults" class="btn btn-primary btn-lg me-2">Shop Adults</a>
+            <a href="#babies" class="btn btn-outline-light btn-lg">Shop Babies</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h3 class="feature-title">Free Shipping</h3>
+                        <p>On all orders over $100 with code FREESHIP</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </div>
+                        <h3 class="feature-title">Easy Returns</h3>
+                        <p>30-day return policy for all items</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3 class="feature-title">Premium Quality</h3>
+                        <p>Authentic, high-quality materials</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adult Fashion Section -->
+    <section class="py-5 bg-white" id="adults">
+        <div class="container">
+            <h2 class="text-center section-title">Stylish Turkey Wears for Adults</h2>
+            <p class="text-center mb-5">Elevate your wardrobe with authentic, high-quality pieces for every occasion</p>
+            
+            <div class="category-banner" style="background-image: url('https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');">
+                <div class="category-banner-content">
+                    <h2>Premium Adult Fashion</h2>
+                    <p>Authentic Turkish designs for every occasion</p>
+                    <a href="#" class="btn btn-light">Shop Collection</a>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="product-img w-100" alt="Turkish Dress">
+                        <div class="p-3">
+                            <span class="product-category">Women's Wear</span>
+                            <h3 class="product-title">Premium Turkish Dress</h3>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$89.99</span>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80" class="product-img w-100" alt="Men's Suit">
+                        <div class="p-3">
+                            <span class="product-category">Men's Wear</span>
+                            <h3 class="product-title">Classic Turkish Suit</h3>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$129.99</span>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="product-img w-100" alt="Casual Wear">
+                        <div class="p-3">
+                            <span class="product-category">Casual Wear</span>
+                            <h3 class="product-title">Everyday Elegance</h3>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$59.99</span>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">View All Adult Fashion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Baby Essentials Section -->
+    <section class="py-5" id="babies">
+        <div class="container">
+            <h2 class="text-center section-title">Everything for Your Little One</h2>
+            <p class="text-center mb-5">From newborn to toddler, explore our collection designed with comfort, quality, and cuteness in mind</p>
+            
+            <div class="category-banner" style="background-image: url('https://images.unsplash.com/photo-1604917019110-1eded661b8d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80');">
+                <div class="category-banner-content">
+                    <h2>Adorable Baby Essentials</h2>
+                    <p>Comfortable, high-quality clothing and accessories</p>
+                    <a href="#" class="btn btn-light">Shop Collection</a>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1604917019110-1eded661b8d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="product-img w-100" alt="Baby Clothes">
+                        <div class="p-3">
+                            <span class="product-category">Newborn</span>
+                            <h3 class="product-title">Organic Cotton Onesies</h3>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$24.99</span>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" class="product-img w-100" alt="Baby Accessories">
+                        <div class="p-3">
+                            <span class="product-category">Accessories</span>
+                            <h3 class="product-title">Soft Baby Booties</h3>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$19.99</span>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1925&q=80" class="product-img w-100" alt="Toddler Clothes">
+                        <div class="p-3">
+                            <span class="product-category">Toddler</span>
+                            <h3 class="product-title">Playtime Outfits</h3>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$29.99</span>
+                                <button class="btn btn-sm btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-4 text-center">
+                <i class="bi bi-info-circle"></i> Please note: We do not carry baby formula.
+            </div>
+            
+            <div class="text-center mt-3">
+                <a href="#" class="btn btn-primary">View All Baby Essentials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-5 bg-white" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="section-title">About Elegance Comfort</h2>
+                    <p>Welcome to Elegance Comfort, where we bring you the perfect blend of premium adult fashion and adorable baby essentials all under one roof.</p>
+                    <p>Founded in 2015, our mission has been to provide high-quality, comfortable, and stylish clothing for all ages. We specialize in authentic Turkish wears for adults that combine traditional craftsmanship with modern designs.</p>
+                    <p>For your little ones, we offer a carefully curated collection of baby clothing and accessories made from the softest, safest materials available.</p>
+                    <p>Every piece in our collection is chosen with care, ensuring you get only the best for yourself and your family.</p>
+                    <a href="#" class="btn btn-primary mt-3">Our Story</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="img-fluid rounded" alt="Our Store">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h2 class="newsletter-title">Join Our Community</h2>
+            <p class="mb-4">Subscribe to our newsletter for exclusive offers, new arrivals, and styling tips</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <input type="email" class="form-control newsletter-input mb-3" placeholder="Your email address">
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h3 class="footer-title">Elegance Comfort</h3>
+                    <p>Where elegance meets comfort for all ages. Premium fashion for adults and adorable essentials for your little ones.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h3 class="footer-title">Shop</h3>
+                    <div class="footer-links">
+                        <a href="#">Women's Fashion</a>
+                        <a href="#">Men's Fashion</a>
+                        <a href="#">Newborn</a>
+                        <a href="#">Toddler</a>
+                        <a href="#">Accessories</a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h3 class="footer-title">Help</h3>
+                    <div class="footer-links">
+                        <a href="#">FAQs</a>
+                        <a href="#">Shipping</a>
+                        <a href="#">Returns</a>
+                        <a href="#">Size Guide</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h3 class="footer-title">Contact</h3>
+                    <p><i class="bi bi-geo-alt me-2"></i> 123 Fashion Ave, New York, NY 10001</p>
+                    <p><i class="bi bi-telephone me-2"></i> (123) 456-7890</p>
+                    <p><i class="bi bi-envelope me-2"></i> info@elegancecomfort.com</p>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <p>&copy; 2023 Elegance Comfort. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple JavaScript for the shopping cart functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add to cart buttons functionality
+            const addToCartButtons = document.querySelectorAll('.btn-outline-primary');
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('btn-outline-primary')) {
+                        const productCard = this.closest('.product-card');
+                        const productName = productCard.querySelector('.product-title').textContent;
+                        const productPrice = productCard.querySelector('.product-price').textContent;
+                        
+                        // In a real app, you would add this to a cart array or send to server
+                        alert(`Added to cart: ${productName} - ${productPrice}`);
+                        
+                        // Change button style temporarily
+                        this.textContent = 'Added!';
+                        this.classList.remove('btn-outline-primary');
+                        this.classList.add('btn-success');
+                        
+                        setTimeout(() => {
+                            this.textContent = 'Add to Cart';
+                            this.classList.add('btn-outline-primary');
+                            this.classList.remove('btn-success');
+                        }, 2000);
+                    }
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-section form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    if (emailInput.value) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        emailInput.value = '';
+                    } else {
+                        alert('Please enter a valid email address');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
